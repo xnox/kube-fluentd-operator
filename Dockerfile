@@ -21,7 +21,7 @@ RUN make build VERSION=$VERSION TARGETARCH=$TARGETARCH TARGETOS=$TARGETOS
 FROM --platform=${TARGETPLATFORM:-linux/amd64} photon:4.0
 
 ARG RVM_PATH=/usr/local/rvm
-ARG RUBY_VERSION=ruby-3.1.4
+ARG RUBY_VERSION=ruby-3.2.0
 ARG RUBY_PATH=/usr/local/rvm/rubies/$RUBY_VERSION
 ARG RUBYOPT='-W:no-deprecated -W:no-experimental'
 ARG TARGETPLATFORM
@@ -49,6 +49,7 @@ ENV BUILDDEPS="\
       zlib-devel \
       libedit \
       libedit-devel \
+      libyaml-devel \
       gdbm \
       gdbm-devel \
       openssl-devel \
